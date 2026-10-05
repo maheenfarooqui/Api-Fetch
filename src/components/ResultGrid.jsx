@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import ResultCard from "./ResultCard";
-import { fetchDataGif, fetchDataPics, fetchDataVideo } from "../api/MediaAPi";
+import { fetchDataGif, fetchDataPics, fetchDataVideo } from "../api/mediaAPi";
 import {
   setClear,
   setactiveTab,
