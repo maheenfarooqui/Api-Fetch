@@ -1,12 +1,15 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { addCollection, addedToast } from "../redux/features/collectionSlice";
+import {
+  removeCollection,
+  removeToast,
+} from "../redux/features/collectionSlice";
 
-const ResultCard = ({ item }) => {
+const CollectionCard = ({ item }) => {
   const dispatch = useDispatch();
-  const saveData = () => {
-    dispatch(addCollection(item));
-    dispatch(addedToast());
+  const removeData = () => {
+    dispatch(removeCollection(item));
+    dispatch(removeToast());
   };
   return (
     <div className="group overflow-hidden border border-[#069494]/40 bg-black transition-all duration-300 hover:-translate-y-1 hover:border-[#069494] hover:shadow-[0_0_25px_rgba(6,148,148,0.25)]">
@@ -49,17 +52,15 @@ const ResultCard = ({ item }) => {
             rel="noopener noreferrer"
             className="mt-1 block font-['VT323'] text-sm uppercase text-[#069494]"
           >
-            {" "}
-            VIEW MEDIA →{" "}
+            VIEW MEDIA →
           </a>
           <button
             className="cursor-pointer mt-1 block font-['VT323'] text-sm uppercase text-[#069494]"
             onClick={() => {
-              saveData(item);
+              removeData(item);
             }}
           >
-            {" "}
-            Save
+            Remove
           </button>
         </div>
       </div>
@@ -67,4 +68,4 @@ const ResultCard = ({ item }) => {
   );
 };
 
-export default ResultCard;
+export default CollectionCard;
